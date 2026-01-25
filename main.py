@@ -99,8 +99,8 @@ def main():
     
     # 侧边栏配置
     st.sidebar.header("⚙️ 系统配置")
-    app_id = st.sidebar.text_input("MXNZP App ID", value="pmsmmskgkksks0gk", type="password")
-    app_secret = st.sidebar.text_input("MXNZP App Secret", value="S2Z6Ym96U3ZpU0Z6Z0Z6Z0Z6Z0Z6Z0Z6", type="password")
+    app_id = st.sidebar.text_input("MXNZP App ID", value="tmvtoqrnmqjqurlp", type="password")
+    app_secret = st.sidebar.text_input("MXNZP App Secret", value="qltq4GTDIVOyq7fUfKIS9kpw0czYyjHV", type="password")
     
     game_type = st.sidebar.selectbox("选择彩种", list(MXNZP_API_CONFIG["lottery_codes"].keys()))
     update_count = st.sidebar.slider("获取期数", 10, 100, 50)
