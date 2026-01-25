@@ -118,9 +118,16 @@ def main():
     tabs = st.tabs(["📊 走势分析", "🤖 智能预测", "🎲 模拟投注", "🛠️ 矩阵工具"])
     
     # 检查是否有数据
+    # 自动更新逻辑
     if 'lottery_data' not in st.session_state:
-        st.info("请先在左侧配置 API 并点击“获取/更新数据”按钮。")
-        return
+        with st.spinner(f"正在自动获取 {game_type} 最新开奖数据..."):
+            records, error = get_lottery_data(game_type, app_id, app_secret, update_count)
+            if not error:
+                st.session_state['lottery_data'] = records
+                st.rerun()
+            else:
+                st.info("自动获取失败，请检查 API 配置或手动点击更新。")
+                return
 
     data = st.session_state['lottery_data']
     df = pd.DataFrame(data)
