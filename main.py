@@ -10,7 +10,13 @@ import matplotlib.pyplot as plt
 import sys
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
+try:
+    from fake_useragent import UserAgent
+except ImportError:
+    class UserAgent:
+        def __init__(self): pass
+        @property
+        def random(self): return "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 from PySide6.QtWidgets import (QApplication, QMainWindow, QTabWidget, QWidget, QVBoxLayout, 
                              QLabel, QPushButton, QComboBox, QSpinBox, QListWidget, 
                              QCheckBox, QMessageBox, QInputDialog, QTableWidget, 
