@@ -36,9 +36,9 @@ MXNZP_API_CONFIG = {
     "base_url": "https://www.mxnzp.com/api/lottery/common",
     "lottery_codes": {
         "双色球": "ssq",
-        "大乐透": "dlt",
+        "大乐透": "cjdlt",
         "快乐8": "kl8",
-        "3D": "3d",
+        "3D": "fc3d",
         "七乐彩": "qlc",
         "排列三": "pl3",
         "排列五": "pl5"
